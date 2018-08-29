@@ -13,8 +13,8 @@ pipeline {
       steps {
         container('maven') {
           dir('env') {
-            sh 'jx step helm build'
-            sh 'echo test'
+            //sh 'jx step helm build'
+            sh 'kubectl cluster-info'
           }
         }
       }
