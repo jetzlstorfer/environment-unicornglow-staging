@@ -12,12 +12,12 @@ pipeline {
     stage('Validate Environment') {
       steps {
         scm checkout
-        
-        docker.build("dynatracesockshop/front-end:latest")
+        script {
+          docker.build("dynatracesockshop/front-end:latest")
 
-        /* Push the container to the custom Registry */
-        docker.push()
-        
+          /* Push the container to the custom Registry */
+          docker.push()
+        }
         sh 'kubectl cluster-info'
 
         
