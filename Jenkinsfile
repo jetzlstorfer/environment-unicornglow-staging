@@ -12,13 +12,12 @@ pipeline {
     stage('Validate Environment') {
       steps {
         scm checkout
-        docker.withRegistry('https://registry.hub.docker.com/', 'juergen-docker') {
+        
+        def customImage = docker.build("dynatracesockshop/front-end:latest")
 
-            def customImage = docker.build("dynatracesockshop/front-end:latest")
-
-            /* Push the container to the custom Registry */
-            customImage.push()
-        }
+        /* Push the container to the custom Registry */
+        customImage.push()
+        
         sh 'kubectl cluster-info'
 
         
