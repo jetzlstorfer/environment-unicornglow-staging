@@ -13,10 +13,10 @@ pipeline {
       steps {
         scm checkout
         
-        def customImage = docker.build("dynatracesockshop/front-end:latest")
+        docker.build("dynatracesockshop/front-end:latest")
 
         /* Push the container to the custom Registry */
-        customImage.push()
+        docker.push()
         
         sh 'kubectl cluster-info'
 
