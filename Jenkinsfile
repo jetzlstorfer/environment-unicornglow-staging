@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Validate Environment') {
       steps {
-        scm checkout
+        checkout scm
         script {
           docker.build("dynatracesockshop/front-end:latest")
 
