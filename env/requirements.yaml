@@ -9,7 +9,7 @@ dependencies:
   version: 2.3.58
 - name: front-end
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.2
+  version: 0.0.3
 - name: node-http-quickstart
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.11
